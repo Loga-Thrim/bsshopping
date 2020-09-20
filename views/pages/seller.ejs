@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet"> 
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+  <script src="/socket/socket.io.js"></script>
+  <script src="/angular/angular.min.js"></script>
+  <script src="/sweetalert/sweetalert.min.js"></script>
+  <title>BS Shopping</title>
+</head>
+<body>
+    <% include ../partials/navbar.ejs %>
+    <div class="container"><br><br><br><br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ชื่อสินค้า</th>
+                    <th>ราคาสินค้า</th>
+                    <th>จำนวนคงเหลือ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>น้ำส้ม</td>
+                    <td>50</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>กาแฟ</td>
+                    <td>60</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>นม</td>
+                    <td>70</td>
+                    <td>10 &nbsp;&nbsp;<a href="javascript:void(0);" onclick="edit()">แก้ไข</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

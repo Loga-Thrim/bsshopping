@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet"> 
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+  <script src="/socket/socket.io.js"></script>
+  <script src="/angular/angular.min.js"></script>
+  <script src="/sweetalert/sweetalert.min.js"></script>
+  <title>BS Shopping</title>
+</head>
+<body>
+    <% include ../partials/navbar.ejs %>
+    <%- changePasswordStatus%>
+    <%- updateContact%>
+
+    <div class="jumbotron"> <br><br>
+        <div class="container">
+            <center>
+                <div id="btnTell"><a onclick="tell()"
+                class="btn btn-primary" style="color: white;" >เพิ่มข้อมูลติดต่อ</a><br></div>
+
+                <div id="formTell" style="display: none;">
+                    <form action="/inputContact" method="post"> <br>
+                        <label for="nickname"><h5>ชื่อเล่น</h5></label>
+                        <input type="text" value="<%=nickname%>" name="nickname" class="form-control" style="width: 50%"><br>
+                        <label for="tell"><h5>เบอร์โทรศัพท์</h5></label>
+                        <input type='text' value="<%=tell%>" class='form-control' name='tell' maxlength="10" style="width: 50%"><br>
+                        <label for="facebook"><h5>Facebook</h5></label>
+                        <input type='text' value="<%=facebook%>" class='form-control' name='facebook' style="width: 50%"><br>
+                        <input type="submit" class="btn btn-success" value="ยืนยัน">
+                    </form>
+                </div>
+                <br><br>
+                
+
+                <div id="btnChangePasswordMain"><a onclick="changePassword()"
+                class="btn btn-primary" style="color: white;" >เปลี่ยนรหัสผ่าน</a><br></div>
+
+                <div id="formChangePassword" style="display: none" ng-app="">
+                    <form action="/changePassword" method="post" name="fromChangePassword"> <br>
+                        <input type='password' placeholder="old password .." required ng-model="oldPassword" class='form-control' name='oldPassword'> <br>
+                        <input type='password' placeholder="new password .." required ng-model="newPassword" class='form-control' name='newPassword'> <br>
+                        <input type="submit" value="เปลี่ยนรหัสผ่าน" ng-disabled="fromChangePassword.$invalid" class="btn btn-primary btn-block">
+                    </form>
+                </div>
+                <br><br>
+                <a href="/logout" class="btn btn-primary">ออกจากระบบ</a>
+            </center>
+        </div>
+    </div>
+
+    <script>
+        //change Password
+        function changePassword(){
+            document.getElementById("formChangePassword").style.display = "";
+            document.getElementById("btnChangePasswordMain").innerHTML = '<div id="btnChangePasswordMain"><a onclick="changePasswordHide()" class="btn btn-primary" style="color: white;" >เปลี่ยนรหัสผ่าน</a><br></div>'
+        }
+        function changePasswordHide(){
+            document.getElementById("formChangePassword").style.display = "none";
+            document.getElementById("btnChangePasswordMain").innerHTML = '<div id="btnChangePasswordMain"><a onclick="changePassword()" class="btn btn-primary" style="color: white;" >เปลี่ยนรหัสผ่าน</a><br></div>'
+        }
+
+        // input tell
+        function tell(){
+            document.getElementById("formTell").style.display = "";
+            document.getElementById("btnTell").innerHTML = '<div id="btnTell"><a onclick="tellHide()" class="btn btn-primary" style="color: white;" >เพิ่มข้อมูลติดต่อ</a><br></div>'
+        }
+        function tellHide(){
+            document.getElementById("formTell").style.display = "none";
+            document.getElementById("btnTell").innerHTML = '<div id="btnTell"><a onclick="tell()" class="btn btn-primary" style="color: white;" >เพิ่มข้อมูลติดต่อ</a><br></div>'
+        }
+    </script>
+</body>
+</html>

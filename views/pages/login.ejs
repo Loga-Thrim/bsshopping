@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet"> 
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+  <script src="/angular/angular.min.js"></script>
+  <script src="/socket/socket.io.js"></script>
+  <script src="/sweetalert/sweetalert.min.js"></script>
+  <title>BS Shopping</title>
+</head>
+<body ng-app="">
+  <%- statusRegister %>
+  <%- statusLogin %>
+  <% include ../partials/navbar.ejs %>
+  
+  <div class="jumbotron"> <br><br>
+    <h1 class="title-formLogin"> ล็อคอิน เข้าใช้งาน BS shopping </h1> <br><br>
+    <div class="container">
+      <form action="/login" name="formLogin" method="post">
+        <input type="email" name="usernameLogin" ng-model="usernameLogin" placeholder="อีเมล .." required class="form-control"> <br>
+        <input type="password" name="passwordLogin" ng-model="passwordLogin" placeholder="รหัสผ่าน" required class="form-control"> <br>
+        <button type="submit" ng-disabled="formLogin.$invalid" class="btn btn-primary btn-block">ล็อคอิน</button>
+      </form>
+      <hr style="height: 1px; border:none; background: black"><br><br>
+      <h1 class="title-formLogin"> สมัครสมาชิก </h1> <br><br>
+      <form action="/register" name="formRegister" method="post">
+          <input type="email" name="usernameRegister" ng-model="usernameRegister" placeholder="อีเมล .." required class="form-control"> <br>
+          <input type="password" name="passwordRegister" ng-model="passwordRegister" placeholder="รหัสผ่าน" required class="form-control"> <br>
+          <button type="submit" ng-disabled="formRegister.$invalid" class="btn btn-primary btn-block">สมัครสมาชิก</button>
+      </form>
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+</html>

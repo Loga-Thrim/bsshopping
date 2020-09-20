@@ -1,0 +1,395 @@
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  font-family: 'Sarabun', sans-serif;
+  background: rgb(22, 22, 22);
+}
+nav ul{
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0, 0, .8);
+  padding: 0;
+  padding-left: 50px;
+  z-index: 999;
+}
+nav ul li{
+  list-style: none;
+  float: left;
+}
+.contact{
+  float: right;
+  padding-right: 100px;
+}
+.nameUser{
+  float: right;
+  cursor: default;
+}
+nav ul li a{
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  color: white;
+  padding: 15px 25px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  transition: .1s;
+}
+nav ul li a:hover{
+  background: rgba(255, 255, 255, 1);
+  color: #000;
+}
+nav ul li.nameUser a:hover{
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+.active{
+  background: rgba(255, 255, 255, 1);
+  color: #000;
+}
+nav .myMenu{
+  width: 100%;
+  background: rgba(0, 0, 0, .8);
+  text-align: center;
+  cursor: pointer;
+  display: none;
+  padding: 3% 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 16px;
+  z-index: 999;
+  transition: .2s;
+}
+nav .myMenu:hover{
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.main-index .container:after{
+  content: '';
+  background: url("/images/1.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: .3;
+  position: absolute;
+  z-index: -1;
+}
+.main-index .container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.main-index .content{
+  text-transform: uppercase;
+  text-align: center;
+}
+.main-index .content span{
+  font-weight: bold;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 60px;
+  text-shadow: 5px 5px 2px black;
+  color: white;
+  letter-spacing: 15px;
+}
+.main-index .content a{
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background: rgba(0, 0, 0, .7);
+  padding: 20px 80px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  border: 1.5px solid white;
+  transition: .5s;
+}
+.main-index .content a:hover{
+  background: white;
+  color: black;
+}
+.main-index .content p{
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 20px;
+  text-shadow: 5px 5px 2px black;
+  color: white;
+  letter-spacing: 5px;
+}
+
+@media only screen and (max-width: 900px){nav ul li a{font-size: 12px;}}
+@media only screen and (max-width: 800px){nav ul li a{font-size: 10px;}}
+@media only screen and (max-width: 730px){nav ul li a{font-size: 9px;}}
+@media only screen and (max-width: 710px){
+  nav ul{
+    padding: 0;
+    position: relative;
+    display: none;
+  }
+  nav .myMenu{
+    display: block;
+    z-index: 9999;
+  }
+  nav ul li{
+    float: none;
+    text-align: center;
+  }
+  nav ul li a{
+    font-size: 13px;
+    padding: 7px 0;
+  }
+  .contact{
+    float: none;
+    padding: 0;
+  }
+  .nameUser{
+    float: none;
+    padding: 0;
+  }
+  .main-index{
+    line-height: 30px;
+  }
+  .main-index .container:after{
+    opacity: .6;
+  }
+  .main-index .content span{
+    top: 20%;
+    font-size: 30px;
+  }
+  .main-index .content a{
+    top: 40%;
+    font-size: 15px;
+    padding: 15px;
+  }
+  .main-index .content p{
+    top: 60%;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+}
+@media only screen and (max-height: 500px){
+  nav ul li a{
+    font-size: 14px;
+    padding: 8px 25px;
+  }
+  .main-index .content span{
+    top: 20%;
+    font-size: 20px;
+  }
+  .main-index .content a{
+    top: 40%;
+    font-size: 13px;
+  }
+  .main-index .content p{
+    top: 55%;
+    font-size: 13px;
+  }
+}
+
+
+/* PRODUCT */
+.container-product{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  z-index: -1;
+}
+.title-product{
+  width: 100%;
+  height: 400px;
+  background: url("/images/3.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.title-product span{
+  position: absolute;
+  top: 55%;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black; 
+  letter-spacing: 5px;
+  font-size: 50px;
+  background: white;
+  padding: 20px;
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, .7);
+}
+
+
+.product{
+  background: rgb(238, 238, 238);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 95%;
+  padding: 5% 0;
+  margin: 10px 0;
+}
+.product ul li{
+  list-style: none;
+  float: left;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 300px;
+  background: white;
+  text-align: center;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
+  line-height: 30px;
+  margin: 4%;
+}
+.product ul li img{
+  width: 100%;
+  max-height: 350px;
+}
+.product ul li span.name-product{
+  font-size: 20px;
+  padding-top: 10px;
+  letter-spacing: 1px;
+  position: relative;
+  display: block;
+}
+.product ul li span.price{
+  font-size: 20px;
+  letter-spacing: 1px;
+  position: relative;
+}
+.product ul li span.product-balance{
+  font-size: 20px;
+  letter-spacing: 1px;
+  position: relative;
+}
+.product ul li button{
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  width: 105%;
+  margin: 0;
+  border-radius: 0 0 20px 20px;
+  left: -2px;
+  bottom: -3px;
+  position: relative;
+  font-size: 18px;
+  background: rgb(37, 168, 255);
+  outline: 0;
+  padding: 10px;
+  text-align: center;
+  transition: .3s;
+}
+.product ul li button:hover{
+  background: rgb(32, 103, 255);
+}
+
+@media only screen and (max-width: 1300px){
+  .container-product span{
+    font-size: 30px;
+  }
+  .product ul li{
+    margin: 7% 10%;
+  }
+  .product ul li span.name-product{
+    font-size: 14px;
+  }
+  .product ul li span.price{
+    font-size: 14px;  
+  }
+  .product ul li span.product-balance{
+    font-size: 14px;  
+  }
+}
+@media only screen and (max-width: 1100px){
+  .product ul li{
+    margin: 7% 30%;
+  }
+}
+@media only screen and (max-width: 850px){
+  .container-product span{
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 800px){
+  .product ul li{
+    width: 40%;
+    margin: 10% 29%;
+  }
+  .product ul li span.name-product{
+    font-size: 13px;
+  }
+  .product ul li span.price{
+    font-size: 13px;
+  }
+  .product ul li span.product-balance{
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 460px){
+  .product ul li span.name-product{
+    font-size: 11px;
+  }
+  .product ul li span.price{
+    font-size: 11px;
+  }
+  .product ul li span.product-balance{
+    font-size: 11;
+  }
+}
+@media only screen and (max-width: 400px){
+  .container-product span{
+    font-size: 12px;
+    padding: 10px;
+  }
+  .title-product{
+    height: 200px;
+  }
+  .product ul li{
+    margin: 10% 25%;
+    line-height: 10px;
+    letter-spacing: .5px;
+  }
+  .product ul li span.name-product{
+    padding-bottom: 0;
+    font-size: 8px;
+    padding-top: 10px;
+  }
+  .product ul li span.price{
+    font-size: 8px;
+  }
+  .product ul li span.product-balance{
+    font-size: 8px;
+  }
+  .product ul li button{
+    font-size: 10px;
+    padding: 5px 0;
+  }
+}
+
+
+
+
+/* Login */
+.title-formLogin{
+  text-align: center;
+}
+@media only screen and (max-width: 600px){
+  .title-formLogin{
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 400px){
+  .title-formLogin{
+    font-size: 15px;
+  }
+}
+
+

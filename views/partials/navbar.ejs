@@ -1,0 +1,25 @@
+<nav>
+    <div id="menu">
+        <a onclick="menu()" style="color:white;" onmouseover="style.color='black'" onmouseout="style.color='white'" class="myMenu">menu</a>
+    </div>
+    <ul id="navbar">
+        <li><a href='/'>หน้าแรก</a></li>
+        <li><a href="/product">สินค้า</a></li>
+        <%- login%>
+        <li><a href="/news">ข่าวสาร</a></li>
+        <li class="contact"><a href="/contact">ติดต่อเรา</a></li>
+        <li class="nameUser"><a style="color:white;"><%= nameUser%></a></li>
+    </ul>
+</nav>
+
+<script>
+    function menu(){
+        document.getElementById("navbar").style.display = "block";
+        document.getElementById("menu").style.display = "block";
+        document.getElementById("menu").innerHTML = "<a onclick='hideMenu()' style='color:white;' class='myMenu'>menu</a>";
+    }
+    function hideMenu(){
+        document.getElementById("navbar").style.display = "none";
+        document.getElementById("menu").innerHTML = "<a onclick='menu()' style='color:white;' class='myMenu'>menu</a>";
+    }
+</script>
